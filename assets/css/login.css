@@ -1,0 +1,110 @@
+.regMenu_top{
+    width: 350px;
+    padding: 0;
+}
+.regMenu_top .login_text{
+    float: left;
+    display: inline-block;
+    width:175px;
+    text-align: center
+}
+.regMenu_top a{
+    display: inline-block;
+}
+.regMenu_top span:first-child a{
+    color: #e31436;
+}
+.suo{
+    float: right;
+}
+.suo:hover{
+    color: #e31436;
+}
+.suo:hover a{
+    color: #e31436;
+}
+.top_phone,.top_email{
+    margin-top: 25px;
+}
+.question{
+    float: right;
+}
+.agree span{
+    color: #999;
+}
+.regMenu_bottom{position: relative}
+.regMenu_foot,.regMenu_foot_1{
+    padding: 10px 40px;
+    position: absolute;
+    bottom: 0;
+    width: 270px;
+    height: 20px;
+    border-bottom: 1px solid #ddd;
+    line-height: 20px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+}
+.regMenu_foot li,.regMenu_foot_1 li{
+    float: left;
+}
+.regMenu_foot .iconfont,.regMenu_foot_1 .iconfont{
+    font-size: 22px;
+    margin-right: 10px;
+}
+.regMenu_foot span,.regMenu_foot_1 span{
+    float: right;
+}
+.regMenu_foot .kuaijie,.regMenu_foot_1 .kuaijie{
+    display: inline-block;
+    float: right;
+    color: #e31436;
+    line-height: 22px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.regMenu_foot .kuaijie .iconfont,.regMenu_foot_1 .kuaijie .iconfont{
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    top:-3px;
+    right: -9px;
+}
+.regMenu_foot .kuaijie em,.regMenu_foot_1 .kuaijie em{
+    position: relative;
+    display: inline-block;
+    line-height: 22px;
+    width: 14px;
+    vertical-align: middle;
+    height: 14px;
+    border-radius: 7px;
+    background-color: #e31436;
+}
+.regMenu_foot .icon-weixin-copy,.regMenu_foot_1 .icon-weixin-copy{
+    color: #92bc83;
+}
+.regMenu_foot .icon-zhifubao,.regMenu_foot_1 .icon-zhifubao{
+    color: #79bdd7;
+}
+.regMenu_foot .icon-logo-weibo,.regMenu_foot_1 .icon-logo-weibo{
+    color: #eba265;
+}
+.regMenu_foot .icon-qq,.regMenu_foot_1 .icon-qq{
+    color: #87a9de;
+}
+.regMenu_bottom_2{
+    padding-top: 0px;
+    position: relative;
+    height: 250px;
+}
+.regMenu_foot_1{
+    bottom: 0px;
+}
+.regMenu_2{
+    background-color: white;
+}
+#log_4{
+    color:#e31436;
+}
+#log_3{
+    color:#333;
+}

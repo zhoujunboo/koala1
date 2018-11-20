@@ -1,0 +1,147 @@
+.center_1{
+    width: 100%;
+    height: 520px;
+}
+.center{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.center img{
+    width: 100%;
+    height: 100%;
+}
+/*regMenu*/
+.regMenu_1{
+    width: 1000px;
+    margin: 0 auto;
+}
+.regMenu{
+    position: absolute;
+    width: 350px;
+    height: 388px;
+    right: 195px;
+    top: 50px;
+}
+.regMenu_top{
+    width: 270px;
+    height: 52px;
+    line-height: 52px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    line-height: 52px;
+    color: #333;
+    padding: 0 40px;
+}
+.text{
+    color: #e31436;
+    font-weight: bold;
+}
+.text_r{
+    float: right;
+    font-size: 12px;
+    cursor: pointer;
+}
+.text_r a{
+    color: #51b8f1;
+}
+.regMenu_bottom{
+    width: 270px;
+    padding: 20px 40px 15px;
+    height: 300px;
+    background-color: white;
+}
+.top_phone,.top_message,.top_password,.top_email{
+    margin-top: 20px;
+    height: 34px;
+    width: 270px;
+    border: 1px solid #d5d5d5;
+    line-height: 30px;
+    border-radius: 2px;
+    color: #bdbdbd;
+}
+.top_img ,.top_message,.top_password{
+    margin-top: 16px;
+}
+.top_phone span,.top_password span,.top_email span{
+    float: left;
+    display: inline-block;
+    width: 39px;
+    height: 34px;
+}
+/*88888888888888888888888888888888888*/
+.top_phone .icon-phone,.top_password .icon-suo,.top_email .icon-email{
+    position: absolute;
+    margin-top:2px;
+    left:50px;
+    font-size: 20px;
+    width: 17px;
+    height: 18px;
+    color: #d5d5d5;
+}
+.top_password .icon-suo{
+    font-size: 16px;
+    left:53px;
+}
+#phone,#password,#eMail{
+    float: left;
+    width: 180px;
+    height: 30px;
+    border: none;
+    margin: 2px 0;
+    color: #bdbdbd;
+}
+#message{
+    width: 130px;
+    height: 30px;
+    border: none;
+    padding-left: 8px;
+    line-height: 30px;
+    margin: 2px 0;
+    font-size: 14px;
+    float: left;
+}
+.top_message span a{
+    float: right;
+    display: block;
+    height: 34px;
+    width: 96px;
+    line-height: 32px;
+    background-color: #eee;
+    color: #333;
+    border-left:1px solid #d5d5d5;
+    text-align: center;
+    font-size: 14px;
+}
+.registerBtn{
+    height: 36px;
+    width: 270px;
+    background-color: #e31436;
+    border-radius: 2px;
+    line-height: 36px;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 23px;
+    margin-bottom: 10px;
+}
+.registerBtn a{
+    display: block;
+    color: #fff;
+}
+.agree{position: relative}
+.checkBox{
+    position: absolute;
+    top:2px;
+}
+
+.agree span{
+    margin-left: 18px;
+}
+
+
+
+
+
+
+
