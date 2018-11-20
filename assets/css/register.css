@@ -84,7 +84,7 @@
     font-size: 16px;
     left:53px;
 }
-#phone,#password,#eMail{
+#phone,#password,#eMail,#phone2,#password2{
     float: left;
     width: 180px;
     height: 30px;

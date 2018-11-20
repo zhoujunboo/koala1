@@ -35,7 +35,7 @@
                 <div class="regMenu_bottom">
                     <div class="suo">
                         <i class="icon iconfont icon-suo"></i>
-                        <span><a href="#">使用密码验证登录</a></span>
+                        <span><a id="passlogin" href="#">使用密码验证登录</a></span>
                     </div>
                     <form action="#">
                         <div class="top_phone">
@@ -166,6 +166,79 @@
         </div>
     </div>
 </div>
+<div class="center_1" id="center_4">
+    <div class="center">
+        <img src="img/loginBg.jpg" alt="">
+        <div class="regMenu_1">
+            <div class="regMenu">
+                <div class="regMenu_top">
+                    <span class="text login_text" ><a id="log_5" href="#">手机号登陆</a></span>
+                    <span class="text login_text" ><a id="log_6" href="#">邮箱登陆</a></span>
+                </div>
+                <div class="regMenu_bottom">
+                    <div class="suo">
+                        <i class="icon iconfont icon-duanxin"></i>
+                        <span><a href="#">使用短信验证登录</a></span>
+                    </div>
+                    <form action="#">
+                        <div class="top_phone">
+                            <span>
+                                <i class="icon iconfont icon-phone"></i>
+                            </span>
+                            <input id="phone2" name="phone" type="text" placeholder="请输入手机号">
+                        </div>
+                        <div class="top_password">
+                            <span>
+                                <i class="icon iconfont icon-suo"></i>
+                            </span>
+                            <input id="password2" name="password" type="text" placeholder="密码">
+                        </div>
+                        <div class="registerBtn">
+                            <a href="#">登录</a>
+                        </div>
+                        <div class="agree">
+                            <input class="checkBox" checked type="checkbox">
+                            <span>10天免登录</span>
+                            <span class="question">忘记密码？</span>
+                        </div>
+                    </form>
+                </div>
+                <div class="regMenu_foot">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="icon iconfont icon-weixin-copy"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon iconfont icon-zhifubao"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon iconfont icon-logo-weibo"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon iconfont icon-qq"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <span>
+                        <a class="kuaijie" href="#">
+                            手机快捷注册
+                            <em>
+                                <i class="icon iconfont icon-dayuhao"></i>
+                            </em>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--foot-->
 <div class="footer_1 login_foot">
     <div class="footer">
@@ -218,7 +291,16 @@
     var log4=document.getElementById("log_4");
     var center_2=document.getElementById("center_2");
     var center_3=document.getElementById("center_3");
+    var center_4=document.getElementById("center_4");
+    var passlogin=document.getElementById("passlogin");
+    passlogin.addEventListener("click",passloginHandlder);
+    function passloginHandlder(e) {
+        center_4.style.display="block";
+        center_2.style.display="none";
+        center_3.style.display="none";
+    }
     center_3.style.display="none";
+    center_4.style.display="none";
     log1.addEventListener("click",clickHandler1);
     log2.addEventListener("click",clickHandler2);
     log3.addEventListener("click",clickHandler3);
