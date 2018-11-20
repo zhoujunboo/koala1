@@ -1,10 +1,10 @@
 var http=require("http");
-var province=[
-    {name:"山东",value:["济南","青岛","烟台","临沂","潍坊"]},
-    {name:"山西",value:["太原","大同","临汾","晋中","运城"]},
-    {name:"陕西",value:["西安","咸阳","宝鸡","延安","铜川","榆林"]},
-    {name:"河北",value:["石家庄","唐山","保定","张家口","邯郸","廊坊"]},
-    {name:"河南",value:["开封","郑州","洛阳","信阳","濮阳","驻马店"]}
+var user=[
+    {phone:"15734079958",password:"1234zhou"},
+    {phone:"17610768768",password:"1234zhou"},
+    {phone:"15504059738",password:"1234zhou"},
+    {phone:"18600006100",password:"1234zhou"},
+    {phone:"18600006101",password:"1234zhou"}
 ];
 var server=http.createServer(function (req,res) {
     var data="";
@@ -13,25 +13,35 @@ var server=http.createServer(function (req,res) {
     });
     req.on("end",function () {
         var obj=JSON.parse(decodeURIComponent(data));
-        var arr=[];
+        console.log(obj);
+        //如果type是0，那么久判断手机号是否被注册
         if(obj.type===0){
-            for(var i=0;i<province.length;i++){
-                arr.push(province[i].name);
+            for(var i=0;i<user.length;i++){
+                if(user[i].phone===obj.phone){
+                    obj.msg="success";
+                    break;
+                }else{
+                    obj.msg="false";
+                    continue;
+                }
             }
-        }else if(obj.type===1){
-          arr= province.filter(function (t) {
-                return t.name===obj.name
-            });
-          if(arr.length>0){
-              arr=arr[0].value;
-          }
+        }else if(obj.type===1){//type=1为注册
+            console.log(obj.type);
+            var length=user.length;
+            var arrObj={};
+            user[length]=arrObj;
+            user[length].phone=obj.phone;
+            user[length].password=obj.password;
+            console.log(user);
+            obj.msg="registerSuccess";
+        }else{
+            obj.error="error";
         }
         res.writeHead(200,{"Content-Type":"text/html","Access-Control-Allow-Origin":"*"});
-
-        res.write(encodeURIComponent(JSON.stringify({type:obj.type,arr:arr})));
+        res.write(encodeURIComponent(JSON.stringify(obj)));
         res.end();
     })
 });
-server.listen(3002,"10.9.170.40",function () {
-   console.log("开启服务")
+server.listen(3005,"10.9.48.182",function () {
+   console.log("koloa已为您开启服务！")
 });

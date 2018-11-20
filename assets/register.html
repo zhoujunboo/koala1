@@ -52,7 +52,7 @@
                             <span>
                                 <i class="icon iconfont icon-suo"></i>
                             </span>
-                            <input id="password" name="password" type="text" placeholder="请输入密码">
+                            <input id="password" name="password" type="password" placeholder="请输入密码">
                         </div>
                         <div id="reg">
 
@@ -61,7 +61,7 @@
                             <a id="register" href="#">注册</a>
                         </div>
                         <div class="agree">
-                            <input class="checkBox" type="checkbox">
+                            <input id="checkBox1" class="checkBox" checked type="checkbox">
                             <span> 我同意《服务条款》《网易隐私政策》</span>
                         </div>
                     </form>
@@ -125,6 +125,7 @@
     register.addEventListener("click",registerClickHandler);
     var topPhone=document.getElementsByClassName("top_phone")[0];
     var topPassword=document.getElementsByClassName("top_password")[0];
+    var checkBox1=document.getElementById("checkBox1");
 
     phone.addEventListener("focus",focusHandler);
     phone.addEventListener("blur",blurHandler);
@@ -134,7 +135,23 @@
 
     /*-------------------注册事件--------------------*/
     function registerClickHandler(e) {
-        ajax();
+        var phoneBool=verifyPhoneReg();
+        var passBool=verifyPassReg();
+        console.log(phoneBool,passBool);
+        if(phoneBool && passBool){
+            console.log(phoneBool+"1",passBool+"二次");
+            if(checkBox1.checked){
+                var type=1;
+                ajax(type);
+            }else{
+                div.style.display="block";
+                span.textContent="";
+                span.textContent="请同意用户协议！";
+                return false;
+            }
+        }else {
+            return;
+        }
     }
     /*------------------手机输入框失焦事件----------------*/
     function blurHandler(e) {
@@ -144,11 +161,11 @@
     function focusHandler(e) {
         topPhone.style.border="1px solid #79bdd7"
     }
-    /*------------------密码输入框失焦事件----------------*/
+    /*------------------密码输入框获得焦点事件----------------*/
     function passFocusHandler(e) {
         topPassword.style.border="1px solid #79bdd7";
     }
-    /*------------------密码输入框获得焦点事件-------------*/
+    /*------------------密码输入框失焦事件-------------*/
     function passBlurHandler(e) {
         verifyPassReg();
     }
@@ -181,7 +198,11 @@
         topPhone.style. border= "1px solid #c5cddb";
         var phoneReg=/^[1][3,4,5,7,8][0-9]{9}$/;
         if(phoneReg.test(phone.value)){
-            return true;
+            div.style.display="none";
+            span.textContent="";
+            //发送ajax到服务器判断手机号是否被注册
+            var type=0;
+            ajax(type);
             /*
             * 点击注册的时候再去判断---一会试试什么时候
             * 去服务器判断数据是否已经注册
@@ -189,6 +210,7 @@
             * 2）未注册继续
             *
             * */
+            return true;
         }else if(phone.value.length===0){
             div.style.display="block";
             span.textContent="";
@@ -205,8 +227,9 @@
             return false;
         }
     }
-    /*验证密码*/
+    /*----------------验证密码正则表达式--------------*/
     function verifyPassReg(e) {
+        topPassword.style. border= "1px solid #c5cddb";
         //只能输入6-20个字母、数字、下划线
         var passReg=/^(\w){6,20}$/;
         if(passReg.test(password.value)){
@@ -217,6 +240,8 @@
             * 2）正确继续
             *
             * */
+            div.style.display="none";
+            span.textContent="";
             return true;
         }else if(password.value.length===0){
             div.style.display="block";
@@ -236,22 +261,42 @@
     /*----------------生成json对象-------------- */
     function getJson() {
         var obj={};
-
         obj.phone=phone.value;
         obj.password=password.value;
-        console.log(obj);
         return obj;
     }
     /*--------------------ajax------------------*/
-    function ajax() {
+    function ajax(_type) {
         var objJson=getJson();
+        objJson.type=_type;
         var xhr=new XMLHttpRequest();
         xhr.addEventListener("load",loadHandler);
         xhr.open("POST","http://10.9.48.182:3005");
         xhr.send(encodeURIComponent(JSON.stringify(objJson)));
     }
-
     function loadHandler(e) {
+        //判断类型，密码错误或者手机号已经被注册
+        var obj=JSON.parse(decodeURIComponent(this.response));
+        console.log(obj.type);
+        if(obj.type===0){
+            if(obj.msg==="success"){
+                div.style.display="block";
+                span.textContent="";
+                span.textContent="手机号已经被注册！";
+                password.value="";
+                topPassword.style.border="1px solid red";
+                return false;
+            }else{
+                return true;
+            }
+        }else if(obj.type===1){
+            if(obj.msg==="registerSuccess"){
+                alert("注册成功！");
+                location.href="login.html";
+            }
+        } else{
+            alert("未知错误！")
+        }
 
     }
 </script>
