@@ -85,7 +85,7 @@
                         </li>
                     </ul>
                     <span>
-                        <a class="kuaijie" href="#">
+                        <a class="kuaijie" href="register.html">
                             手机快捷注册
                             <em>
                                 <i class="icon iconfont icon-dayuhao"></i>
@@ -178,23 +178,26 @@
                 <div class="regMenu_bottom">
                     <div class="suo">
                         <i class="icon iconfont icon-duanxin"></i>
-                        <span><a href="#">使用短信验证登录</a></span>
+                        <span><a id="messlogin" href="#">使用短信验证登录</a></span>
                     </div>
                     <form action="#">
-                        <div class="top_phone">
+                        <div class="top_phone" id="top_phone_02">
                             <span>
                                 <i class="icon iconfont icon-phone"></i>
                             </span>
                             <input id="phone2" name="phone" type="text" placeholder="请输入手机号">
                         </div>
-                        <div class="top_password">
+                        <div class="top_password" id="top_password_2">
                             <span>
                                 <i class="icon iconfont icon-suo"></i>
                             </span>
-                            <input id="password2" name="password" type="text" placeholder="密码">
+                            <input id="password2" name="password" type="password" placeholder="密码">
+                        </div>
+                        <div id="reg">
+
                         </div>
                         <div class="registerBtn">
-                            <a href="#">登录</a>
+                            <a id="login" href="#">登录</a>
                         </div>
                         <div class="agree">
                             <input class="checkBox" checked type="checkbox">
@@ -227,7 +230,7 @@
                         </li>
                     </ul>
                     <span>
-                        <a class="kuaijie" href="#">
+                        <a class="kuaijie" href="register.html">
                             手机快捷注册
                             <em>
                                 <i class="icon iconfont icon-dayuhao"></i>
@@ -289,22 +292,36 @@
     var log2=document.getElementById("log_2");
     var log3=document.getElementById("log_3");
     var log4=document.getElementById("log_4");
+    var log6=document.getElementById("log_6");
     var center_2=document.getElementById("center_2");
     var center_3=document.getElementById("center_3");
     var center_4=document.getElementById("center_4");
     var passlogin=document.getElementById("passlogin");
+    var messlogin=document.getElementById("messlogin");
+    messlogin.addEventListener("click",messloginHandler);
     passlogin.addEventListener("click",passloginHandlder);
-    function passloginHandlder(e) {
-        center_4.style.display="block";
-        center_2.style.display="none";
-        center_3.style.display="none";
-    }
     center_3.style.display="none";
     center_4.style.display="none";
     log1.addEventListener("click",clickHandler1);
     log2.addEventListener("click",clickHandler2);
     log3.addEventListener("click",clickHandler3);
     log4.addEventListener("click",clickHandler4);
+    log6.addEventListener("click",clickHandler6);
+    function passloginHandlder(e) {
+        center_4.style.display="block";
+        center_2.style.display="none";
+        center_3.style.display="none";
+    }
+    function messloginHandler(e) {
+        center_4.style.display="none";
+        center_2.style.display="block";
+        center_3.style.display="none";
+    }
+    function clickHandler6(e) {
+        center_2.style.display="none";
+        center_3.style.display="block";
+        center_4.style.display="none";
+    }
     function clickHandler1(e) {
         center_2.style.display="block";
         center_3.style.display="none";
@@ -320,6 +337,164 @@
     function clickHandler4(e) {
         center_2.style.display="none";
         center_3.style.display="block";
+    }
+    /*登录实现*/
+    var login=document.getElementById("login");
+    var phone=document.getElementById("phone2");
+    var password=document.getElementById("password2");
+    var reg=document.getElementById("reg");
+    login.addEventListener("click",loginClickHandler);
+    var topPhone=document.getElementById("top_phone_02");
+    var topPassword=document.getElementById("top_password_2");
+
+    phone.addEventListener("focus",focusHandler);
+    phone.addEventListener("blur",blurHandler);
+
+    password.addEventListener("focus",passFocusHandler);
+    password.addEventListener("blur",passBlurHandler);
+
+    /*-------------------注册事件--------------------*/
+    function loginClickHandler(e) {
+        var phoneBool=verifyPhoneReg();
+        var passBool=verifyPassReg();
+        var type=0;
+        ajax(type);
+        console.log(phoneBool,passBool);
+        if(phoneBool && passBool){
+            var type=2;
+            ajax(type);
+        }else {
+            return;
+        }
+    }
+    /*------------------手机输入框失焦事件----------------*/
+    function blurHandler(e) {
+        verifyPhoneReg();
+    }
+    /*------------------手机输入框获得焦点事件-------------*/
+    function focusHandler(e) {
+        topPhone.style.border="1px solid #79bdd7"
+    }
+    /*------------------密码输入框获得焦点事件----------------*/
+    function passFocusHandler(e) {
+        topPassword.style.border="1px solid #79bdd7";
+    }
+    /*------------------密码输入框失焦事件-------------*/
+    function passBlurHandler(e) {
+        verifyPassReg();
+    }
+
+    /*----------------创建错误信息div-----------------*/
+    divStyle={
+        fontSize:"12px",
+        color:"#fa5b5b",
+        width: "298px",
+        lineHeight: "20px",
+        verticalAlign: "top",
+        wordBreak: "break-all",
+        float:"left",
+        display:"none"
+    };
+    var div=document.createElement("div");
+    var span=document.createElement("span");
+    Object.assign(div.style,divStyle);
+    span.id="Regspan";
+    var i=document.createElement("i");
+    i.className="icon iconfont icon-chahao";
+    i.style.color="#fa5b5b";
+    i.style.fontSize="14px";
+    div.appendChild(i);
+    div.appendChild(span);
+    reg.appendChild(div);
+
+    /*----------------验证手机号正则表达式--------------*/
+    function verifyPhoneReg() {
+        topPhone.style. border= "1px solid #c5cddb";
+        var phoneReg=/^[1][3,4,5,7,8][0-9]{9}$/;
+        if(phoneReg.test(phone.value)){
+            div.style.display="none";
+            span.textContent="";
+            return true;
+        }else if(phone.value.length===0){
+            div.style.display="block";
+            span.textContent="";
+            span.textContent="请输入手机号";
+            topPhone.style. border= "1px solid red";
+            return false;
+        }else{
+            div.style.display="block";
+            span.textContent="";
+            span.textContent="手机号格式错误";
+            topPhone.style. border= "1px solid red";
+            return false;
+        }
+    }
+    /*----------------验证密码正则表达式--------------*/
+    function verifyPassReg(e) {
+        topPassword.style. border= "1px solid #c5cddb";
+        var passReg=/^(\w){6,20}$/;
+        if(passReg.test(password.value)){
+            div.style.display="none";
+            span.textContent="";
+            return true;
+        }else if(password.value.length===0){
+            div.style.display="block";
+            span.textContent="";
+            span.textContent="请输入密码";
+            topPassword.style.border="1px solid red";
+            return false;
+        }else {
+            div.style.display="block";
+            span.textContent="";
+            span.textContent="格式错误，请输入6-20个字母、数字、下划线";
+            topPassword.style.border="1px solid red";
+            return false;
+        }
+    }
+
+    /*----------------生成json对象-------------- */
+    function getJson() {
+        var obj={};
+        obj.phone=phone.value;
+        obj.password=password.value;
+        return obj;
+    }
+    /*--------------------ajax------------------*/
+    function ajax(_type) {
+        var objJson=getJson();
+        objJson.type=_type;
+        var xhr=new XMLHttpRequest();
+        xhr.addEventListener("load",loadHandler);
+        xhr.open("POST","http://10.9.48.182:3005");
+        xhr.send(encodeURIComponent(JSON.stringify(objJson)));
+    }
+    function loadHandler(e) {
+        var obj=JSON.parse(decodeURIComponent(this.response));
+        console.log(obj.type);
+        //判断是否登录成功（1、判断类型 2、判断msg是否为success）
+        if(obj.type===0){
+            if(obj.msg==="false"){
+                div.style.display="block";
+                span.textContent="";
+                span.textContent="该手机账号未注册";
+                return;
+            }else{
+                span.textContent="";
+                div.style.display="none";
+                return true;
+            }
+        }else if(obj.type===2){
+            if(obj.msg==="passSuccess"){
+                alert("登陆成功！");
+                location.href="../index.html";
+            }else if(obj.msg==="passFalse"){
+                div.style.display="block";
+                span.textContent="";
+                span.textContent="账号或密码错误";
+            }
+        }else{
+            alert("未知错误！");
+        }
     }
 </script>
 </body>

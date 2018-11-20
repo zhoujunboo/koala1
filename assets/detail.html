@@ -2,139 +2,140 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>网易考拉海购首页</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/foot.css">
-    <link rel="stylesheet" href="assets/font/iconfont.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <script type="text/javascript" src="assets/js/Carousel.js"></script>
-    <script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+    <title>详情页</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/detail.css">
 </head>
 <body>
-    <div class="container">
-        <!--nav头部-->
-        <div class="nav_1">
-            <div class="nav">
-                <div class="navTopLeft">
-                    <span>考拉欢迎你！</span>
-                    <a href="assets/login.html">登录</a>
-                    <a href="assets/register.html">免费注册</a>
-                </div>
-                <div class="navTopCenter">
+<div class="container">
+    <!--nav头部-->
+    <div class="nav_1">
+        <div class="nav">
+            <div class="navTopLeft">
+                <span>考拉欢迎你！</span>
+                <a href="login.html">登录</a>
+                <a href="register.html">免费注册</a>
+            </div>
+            <div class="navTopCenter">
                     <span>手机考拉
                             <div class="triangle"></div>
                         <div class="weima">
-                            <img src="assets/img/weima.bmp" alt="二维码">
+                            <img src="img/weima.bmp" alt="二维码">
                             <div>下载APP</div>
                             <div>领1000元新人礼包</div>
                         </div>
                     </span>
 
+            </div>
+            <div class="navTopRight">
+                <ul>
+                    <li><a href="#">每日签到</a></li>
+                    <li><a href="#">我的订单</a></li>
+                    <li>
+                        <a href="#">个人中心
+                            <span></span>
+                        </a>
+                        <div class="right_p">
+                            <p><a href="#">我的优惠券</a></p>
+                            <p><a href="#">我的红包</a></p>
+                            <p class="last_right_p"><a href="#">我的考拉豆</a></p>
+                            <p><a href="#">账号管理</a></p>
+                            <p class="last_right_p"><a href="#">我的实名认证</a></p>
+                            <p><a href="#">我收藏的商品</a></p>
+                            <p class="last_right_p"><a href="#">我关注的品牌</a></p>
+                            <p><a href="#">售后管理</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">客户服务
+                            <span></span>
+                        </a>
+                        <div class="right_p">
+                            <p><a href="#">联系客服</a></p>
+                            <p><a href="#">帮助中心</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">充值中心
+                            <span></span>
+                        </a>
+                        <div class="right_p">
+                            <p><a href="#">话费流量</a></p>
+                            <p><a href="#">游戏充值</a></p>
+                            <p><a href="">AppStore充值码</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">消费者权益
+                            <span></span>
+                        </a>
+                        <div class="right_p">
+                            <p><a href="#">消费者告知书</a></p>
+                            <p><a href="#">消费者投诉</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">更多
+                            <span></span>
+                        </a>
+                        <div class="right_p ">
+                            <p class="last_right_p"><a href="#">收藏本站</a></p>
+                            <p><a href="#">新浪微博</a></p>
+                            <p><a href="#">微信公众号</a></p>
+                            <p><a href="#">易信公众号</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--logo-->
+    <div class="logo_head_1">
+        <div class="logo_head">
+            <div class="load_head_left">
+                <a href="#">
+                    <img src="img/koloa.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="load_head_center">
+                <div class="load_head_center_t">
+                    <i class="icon iconfont icon-sousuo"></i>
+                    <input id="topSearchInput" type="text" placeholder="施华洛世奇">
+                    <span class="load_head_center_t_sp">
+                            <i class="icon iconfont icon-sousuo1"></i>
+                        </span>
                 </div>
-                <div class="navTopRight">
+                <div class="load_head_center_b">
                     <ul>
-                        <li><a href="#">每日签到</a></li>
-                        <li><a href="#">我的订单</a></li>
-                        <li>
-                            <a href="#">个人中心
-                                <span></span>
-                            </a>
-                            <div class="right_p">
-                                <p><a href="#">我的优惠券</a></p>
-                                <p><a href="#">我的红包</a></p>
-                                <p class="last_right_p"><a href="#">我的考拉豆</a></p>
-                                <p><a href="#">账号管理</a></p>
-                                <p class="last_right_p"><a href="#">我的实名认证</a></p>
-                                <p><a href="#">我收藏的商品</a></p>
-                                <p class="last_right_p"><a href="#">我关注的品牌</a></p>
-                                <p><a href="#">售后管理</a></p>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">客户服务
-                                <span></span>
-                            </a>
-                            <div class="right_p">
-                                <p><a href="#">联系客服</a></p>
-                                <p><a href="#">帮助中心</a></p>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">充值中心
-                                <span></span>
-                            </a>
-                            <div class="right_p">
-                                <p><a href="#">话费流量</a></p>
-                                <p><a href="#">游戏充值</a></p>
-                                <p><a href="">AppStore充值码</a></p>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">消费者权益
-                                <span></span>
-                            </a>
-                            <div class="right_p">
-                                <p><a href="#">消费者告知书</a></p>
-                                <p><a href="#">消费者投诉</a></p>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">更多
-                                <span></span>
-                            </a>
-                            <div class="right_p ">
-                                <p class="last_right_p"><a href="#">收藏本站</a></p>
-                                <p><a href="#">新浪微博</a></p>
-                                <p><a href="#">微信公众号</a></p>
-                                <p><a href="#">易信公众号</a></p>
-                            </div>
-                        </li>
+                        <li><a href="#">面膜</a></li>
+                        <li><a href="#">口红</a></li>
+                        <li><a href="#">减肥</a></li>
+                        <li class="load_head_center_b_active"><a href="#">全球工厂店</a></li>
+                        <li><a href="#">运动鞋</a></li>
+                        <li><a href="#">项链</a></li>
+                        <li><a href="#">女包</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
-
-        <!--logo-->
-        <div class="logo_head_1">
-            <div class="logo_head">
-                <div class="load_head_left">
-                    <a href="#">
-                        <img src="assets/img/koloa.jpg" alt="logo">
-                    </a>
-                </div>
-                <div class="load_head_center">
-                    <div class="load_head_center_t">
-                        <i class="icon iconfont icon-sousuo"></i>
-                        <input id="topSearchInput" type="text" placeholder="施华洛世奇">
-                        <span class="load_head_center_t_sp">
-                            <i class="icon iconfont icon-sousuo1"></i>
-                        </span>
-                    </div>
-                    <div class="load_head_center_b">
-                        <ul>
-                            <li><a href="#">面膜</a></li>
-                            <li><a href="#">口红</a></li>
-                            <li><a href="#">减肥</a></li>
-                            <li class="load_head_center_b_active"><a href="#">全球工厂店</a></li>
-                            <li><a href="#">运动鞋</a></li>
-                            <li><a href="#">项链</a></li>
-                            <li><a href="#">女包</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="load_head_right">
-                    <i class="icon iconfont icon-gouwuche"></i>
-                    <span>购物车</span>
-                </div>
+            <div class="load_head_right">
+                <i class="icon iconfont icon-gouwuche"></i>
+                <span>购物车</span>
             </div>
         </div>
+    </div>
 
-        <!--tab-->
-        <div class="top_tab1">
-            <div class="topTab">
-                <div class="topTab_left">
-                    <i></i>
-                    <span>
+    <!--tab-->
+    <div class="top_tab1">
+        <div class="topTab">
+            <div class="topTab_left">
+                <i></i>
+                <span>
                         <i class="icon iconfont icon-caidan"></i>
                         <a class="active_a" href="#">所有分类</a>
                         <ul class="topTab_left_ul">
@@ -277,27 +278,27 @@
                                     <div class="bigBox_right">
                                         <div class="bigBox_right_div">
                                             <div>
-                                                <a href="#"><img src="assets/img/right_03.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_03.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_05.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_05.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_09.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_09.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_10.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_10.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_13.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_13.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_14.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_14.jpg" alt=""></a>
                                             </div>
                                         </div>
                                         <div class="clothes">
                                             <a href="#">
-                                                <img src="assets/img/clothes.png" alt="">
+                                                <img src="img/clothes.png" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -441,27 +442,27 @@
                                     <div class="bigBox_right">
                                         <div class="bigBox_right_div">
                                             <div>
-                                                <a href="#"><img src="assets/img/right_03.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_03.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_05.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_05.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_09.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_09.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_10.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_10.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_13.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_13.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_14.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_14.jpg" alt=""></a>
                                             </div>
                                         </div>
                                         <div class="clothes">
                                             <a href="#">
-                                                <img src="assets/img/clothes.png" alt="">
+                                                <img src="img/clothes.png" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -601,27 +602,27 @@
                                     <div class="bigBox_right">
                                         <div class="bigBox_right_div">
                                             <div>
-                                                <a href="#"><img src="assets/img/right_03.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_03.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_05.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_05.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_09.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_09.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_10.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_10.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_13.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_13.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_14.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_14.jpg" alt=""></a>
                                             </div>
                                         </div>
                                         <div class="clothes">
                                             <a href="#">
-                                                <img src="assets/img/clothes.png" alt="">
+                                                <img src="img/clothes.png" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -763,27 +764,27 @@
                                     <div class="bigBox_right">
                                         <div class="bigBox_right_div">
                                             <div>
-                                                <a href="#"><img src="assets/img/right_03.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_03.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_05.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_05.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_09.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_09.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_10.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_10.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_13.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_13.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_14.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_14.jpg" alt=""></a>
                                             </div>
                                         </div>
                                         <div class="clothes">
                                             <a href="#">
-                                                <img src="assets/img/clothes.png" alt="">
+                                                <img src="img/clothes.png" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -926,27 +927,27 @@
                                     <div class="bigBox_right">
                                         <div class="bigBox_right_div">
                                             <div>
-                                                <a href="#"><img src="assets/img/right_03.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_03.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_05.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_05.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_09.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_09.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_10.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_10.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_13.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_13.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_14.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_14.jpg" alt=""></a>
                                             </div>
                                         </div>
                                         <div class="clothes">
                                             <a href="#">
-                                                <img src="assets/img/clothes.png" alt="">
+                                                <img src="img/clothes.png" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -1089,27 +1090,27 @@
                                     <div class="bigBox_right">
                                         <div class="bigBox_right_div">
                                             <div>
-                                                <a href="#"><img src="assets/img/right_03.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_03.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_05.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_05.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_09.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_09.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_10.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_10.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_13.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_13.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_14.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_14.jpg" alt=""></a>
                                             </div>
                                         </div>
                                         <div class="clothes">
                                             <a href="#">
-                                                <img src="assets/img/clothes.png" alt="">
+                                                <img src="img/clothes.png" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -1252,27 +1253,27 @@
                                     <div class="bigBox_right">
                                         <div class="bigBox_right_div">
                                             <div>
-                                                <a href="#"><img src="assets/img/right_03.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_03.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_05.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_05.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_09.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_09.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_10.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_10.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_13.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_13.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_14.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_14.jpg" alt=""></a>
                                             </div>
                                         </div>
                                         <div class="clothes">
                                             <a href="#">
-                                                <img src="assets/img/clothes.png" alt="">
+                                                <img src="img/clothes.png" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -1415,27 +1416,27 @@
                                     <div class="bigBox_right">
                                         <div class="bigBox_right_div">
                                             <div>
-                                                <a href="#"><img src="assets/img/right_03.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_03.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_05.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_05.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_09.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_09.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_10.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_10.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_13.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_13.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_14.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_14.jpg" alt=""></a>
                                             </div>
                                         </div>
                                         <div class="clothes">
                                             <a href="#">
-                                                <img src="assets/img/clothes.png" alt="">
+                                                <img src="img/clothes.png" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -1580,27 +1581,27 @@
                                     <div class="bigBox_right">
                                         <div class="bigBox_right_div">
                                             <div>
-                                                <a href="#"><img src="assets/img/right_03.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_03.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_05.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_05.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_09.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_09.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_10.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_10.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_13.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_13.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_14.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_14.jpg" alt=""></a>
                                             </div>
                                         </div>
                                         <div class="clothes">
                                             <a href="#">
-                                                <img src="assets/img/clothes.png" alt="">
+                                                <img src="img/clothes.png" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -1744,27 +1745,27 @@
                                     <div class="bigBox_right">
                                         <div class="bigBox_right_div">
                                             <div>
-                                                <a href="#"><img src="assets/img/right_03.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_03.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_05.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_05.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_09.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_09.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_10.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_10.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_13.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_13.jpg" alt=""></a>
                                             </div>
                                             <div>
-                                                <a href="#"><img src="assets/img/right_14.jpg" alt=""></a>
+                                                <a href="#"><img src="img/right_14.jpg" alt=""></a>
                                             </div>
                                         </div>
                                         <div class="clothes">
                                             <a href="#">
-                                                <img src="assets/img/clothes.png" alt="">
+                                                <img src="img/clothes.png" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -1772,496 +1773,201 @@
                             </li>
                         </ul>
                     </span>
-                </div>
-                <div class="topTab_right">
-                    <ul>
-                        <li><a href="#">首页</a></li>
-                        <li><a href="#">今日限时购</a></li>
-                        <li><a href="#">每日上新</a></li>
-                        <li><a href="#">国家馆</a></li>
-                        <li><a href="#">海外旗舰店</a></li>
-                        <li><a href="#">工厂店</a></li>
-                        <li><a href="#">品质奶粉</a></li>
-                        <li><a href="#">人气面膜</a></li>
-                        <li><a href="#">充值</a></li>
-                    </ul>
-                </div>
             </div>
-        </div>
-        <!--banner-->
-
-        <div class="banner_1">
-            <div id="banner">
-
-            </div>
-        </div>
-        <!--headImg-->
-        <div class="headImg_1">
-            <div class="headImg">
-                <a href="#">
-                    <img src="assets/img/money.jpg" alt="">
-                </a>
-            </div>
-        </div>
-        <!--headImg2-->
-        <div class="headImg_2">
-            <div class="headImg2">
-                <a href="#">
-                    <img src="assets/img/earch.jpg" alt="">
-                </a>
-            </div>
-        </div>
-        <!--headImg3-->
-        <div class="headImg_3">
-            <div class="headImg3_clear_r">
-                <div class="headImg3">
-                    <a href="#">
-                        <img src="assets/img/top_03.jpg" alt="">
-                    </a>
-                    <a href="#">
-                        <img src="assets/img/top_05.jpg" alt="">
-                    </a>
-                    <a href="#">
-                        <img src="assets/img/top_07.jpg" alt="">
-                    </a>
-                    <a href="#">
-                        <img src="assets/img/top_09.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-
-        <!--content-->
-        <div class="content_1">
-            <div class="content" id="content_dom">
-                <div class="content_head">
-                    ★☆口碑爆款☆★
-                </div>
-            </div>
-        </div>
-
-        <div class="last_bottom_foot_1">
-            <div class="last_bottom_foot">
-                <a href="#">
-                    <img src="assets/img/shop.jpg" alt="">
-                </a>
-            </div>
-        </div>
-
-
-        <!--footBgWrap-->
-        <div class="footBgWrap_1">
-            <div class="footBgWrap">
-                <ul class="footBgWrap_top">
-                    <li class="footBgWrap_top_boll">
-                        <div class="footBgWrap_top_boll_left">
-                            <span>正</span>
-                        </div>
-                        <div class="footBgWrap_top_boll_rig">
-                            <span>100%正品</span>
-                            <p>正品保障 假一赔十</p>
-                        </div>
-                    </li>
-                    <li class="footBgWrap_top_boll">
-                        <div class="footBgWrap_top_boll_left">
-                            <span>低</span>
-                        </div>
-                        <div class="footBgWrap_top_boll_rig">
-                            <span>低价保障</span>
-                            <p>缩减中间环节 确保底价</p>
-                        </div>
-                    </li>
-                    <li class="footBgWrap_top_boll">
-                        <div class="footBgWrap_top_boll_left">
-                            <span>退</span>
-                        </div>
-                        <div class="footBgWrap_top_boll_rig">
-                            <span>30天无忧退货</span>
-                            <p>国内退货 售后无忧</p>
-                        </div>
-                    </li>
-                    <li class="footBgWrap_top_boll">
-                        <div class="footBgWrap_top_boll_left">
-                            <span>邮</span>
-                        </div>
-                        <div class="footBgWrap_top_boll_rig">
-                            <span>满88包邮</span>
-                            <p>部分特殊商品除外</p>
-                        </div>
-                    </li>
+            <div class="topTab_right">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">今日限时购</a></li>
+                    <li><a href="#">每日上新</a></li>
+                    <li><a href="#">国家馆</a></li>
+                    <li><a href="#">海外旗舰店</a></li>
+                    <li><a href="#">工厂店</a></li>
+                    <li><a href="#">品质奶粉</a></li>
+                    <li><a href="#">人气面膜</a></li>
+                    <li><a href="#">充值</a></li>
                 </ul>
-                <div class="footBgWrap_bottom">
-                    <div class="bottom_left">
-                        <div class="bottom_left_t">
-                            <a href="#">
-                                <img src="assets/img/koloaIcon.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="bottom_left_b">
-                            <a href="#">关注我们</a>
-                            <span class="span_01">
+            </div>
+        </div>
+    </div>
+
+    <!--详情界面-->
+    <div class="detail_1">
+        <div class="detail">
+
+        </div>
+    </div>
+
+
+
+<!--
+
+    &lt;!&ndash;footBgWrap&ndash;&gt;
+    <div class="footBgWrap_1">
+        <div class="footBgWrap">
+            <ul class="footBgWrap_top">
+                <li class="footBgWrap_top_boll">
+                    <div class="footBgWrap_top_boll_left">
+                        <span>正</span>
+                    </div>
+                    <div class="footBgWrap_top_boll_rig">
+                        <span>100%正品</span>
+                        <p>正品保障 假一赔十</p>
+                    </div>
+                </li>
+                <li class="footBgWrap_top_boll">
+                    <div class="footBgWrap_top_boll_left">
+                        <span>低</span>
+                    </div>
+                    <div class="footBgWrap_top_boll_rig">
+                        <span>低价保障</span>
+                        <p>缩减中间环节 确保底价</p>
+                    </div>
+                </li>
+                <li class="footBgWrap_top_boll">
+                    <div class="footBgWrap_top_boll_left">
+                        <span>退</span>
+                    </div>
+                    <div class="footBgWrap_top_boll_rig">
+                        <span>30天无忧退货</span>
+                        <p>国内退货 售后无忧</p>
+                    </div>
+                </li>
+                <li class="footBgWrap_top_boll">
+                    <div class="footBgWrap_top_boll_left">
+                        <span>邮</span>
+                    </div>
+                    <div class="footBgWrap_top_boll_rig">
+                        <span>满88包邮</span>
+                        <p>部分特殊商品除外</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="footBgWrap_bottom">
+                <div class="bottom_left">
+                    <div class="bottom_left_t">
+                        <a href="#">
+                            <img src="img/koloaIcon.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="bottom_left_b">
+                        <a href="#">关注我们</a>
+                        <span class="span_01">
                                 <i class="icon iconfont icon-weibo"></i>
                                 <em>
-                                    <img src="assets/img/koloa_1.png" alt="">
+                                    <img src="img/koloa_1.png" alt="">
                                 </em>
                             </span>
-                            <span class="span_02">
+                        <span class="span_02">
                                 <i class="icon iconfont icon-weixin"></i>
                                 <em>
-                                    <img src="assets/img/koloa_1.png" alt="">
+                                    <img src="img/koloa_1.png" alt="">
                                 </em>
                             </span>
-                            <span class="span_03">
+                        <span class="span_03">
                                 <i class="icon iconfont icon-weibo"></i>
                                 <em>
-                                    <img src="assets/img/koloa_1.png" alt="">
+                                    <img src="img/koloa_1.png" alt="">
                                 </em>
                         </span>
-                        </div>
                     </div>
-                    <ul class="bottom_center">
-                        <li class="bottom_center_li">
-                            <p>考拉保障</p>
-                            <ul>
-                                <li><a href="#">假一赔十</a></li>
-                                <li><a href="#">监正监督</a></li>
-                            </ul>
-                        </li>
-                        <li class="bottom_center_li">
-                            <p>新手指南</p>
-                            <ul>
-                                <li><a href="#">购买流程</a></li>
-                                <li><a href="#">支付方式</a></li>
-                                <li><a href="#">通关税费</a></li>
-                                <li><a href="#">常见问题</a></li>
-                            </ul>
-                        </li>
-                        <li class="bottom_center_li">
-                            <p>售后服务</p>
-                            <ul>
-                                <li><a href="#">退货政策</a></li>
-                                <li><a href="#">退货流程</a></li>
-                                <li><a href="#">退款说明</a></li>
-                                <li><a href="#">联系客服</a></li>
-                            </ul>
-                        </li>
-                        <li class="bottom_center_li">
-                            <p>物流配送</p>
-                            <ul>
-                                <li><a href="#">配送方式</a></li>
-                                <li><a href="#">配送服务</a></li>
-                                <li><a href="#">运费标准</a></li>
-                                <li><a href="#">物流跟踪</a></li>
-                            </ul>
-                        </li>
-                        <li class="bottom_center_li">
-                            <p>关于我们</p>
-                            <ul>
-                                <li><a href="#">联系我们</a></li>
-                                <li><a href="#">招商合作</a></li>
-                                <li><a href="#">销售联盟</a></li>
-                                <li><a href="#">CEO邮箱</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="bottom_right">
-                        <a class="bottom_right_a" href="#">
-                            <img src="assets/img/kolaweima.png" alt="#">
-                        </a>
-                        <p>
-                            <a href="#">扫描下载手机版</a>
-                        </p>
-                    </div>
+                </div>
+                <ul class="bottom_center">
+                    <li class="bottom_center_li">
+                        <p>考拉保障</p>
+                        <ul>
+                            <li><a href="#">假一赔十</a></li>
+                            <li><a href="#">监正监督</a></li>
+                        </ul>
+                    </li>
+                    <li class="bottom_center_li">
+                        <p>新手指南</p>
+                        <ul>
+                            <li><a href="#">购买流程</a></li>
+                            <li><a href="#">支付方式</a></li>
+                            <li><a href="#">通关税费</a></li>
+                            <li><a href="#">常见问题</a></li>
+                        </ul>
+                    </li>
+                    <li class="bottom_center_li">
+                        <p>售后服务</p>
+                        <ul>
+                            <li><a href="#">退货政策</a></li>
+                            <li><a href="#">退货流程</a></li>
+                            <li><a href="#">退款说明</a></li>
+                            <li><a href="#">联系客服</a></li>
+                        </ul>
+                    </li>
+                    <li class="bottom_center_li">
+                        <p>物流配送</p>
+                        <ul>
+                            <li><a href="#">配送方式</a></li>
+                            <li><a href="#">配送服务</a></li>
+                            <li><a href="#">运费标准</a></li>
+                            <li><a href="#">物流跟踪</a></li>
+                        </ul>
+                    </li>
+                    <li class="bottom_center_li">
+                        <p>关于我们</p>
+                        <ul>
+                            <li><a href="#">联系我们</a></li>
+                            <li><a href="#">招商合作</a></li>
+                            <li><a href="#">销售联盟</a></li>
+                            <li><a href="#">CEO邮箱</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="bottom_right">
+                    <a class="bottom_right_a" href="#">
+                        <img src="img/kolaweima.png" alt="#">
+                    </a>
+                    <p>
+                        <a href="#">扫描下载手机版</a>
+                    </p>
                 </div>
             </div>
         </div>
-        <!--footer-->
-        <div class="footer_1">
-            <div class="footer">
-                <div>
-                    <a href="#">About NetEase - </a>
-                    <a href="#">公司简介 - </a>
-                    <a href="#">联系方法 - </a>
-                    <a href="#">友情链接 - </a>
-                    <a href="#">招聘信息 - </a>
-                    <a href="#">客户服务 - </a>
-                    <a href="#">隐私政策 - </a>
-                    <a href="#">网络营销 - </a>
-                    <a href="#">网易考拉</a>
-                </div>
-                <div>
-                    <span>网络文化经营许可证：浙网文[2016]0155-055号</span>
-                    <span>增值电信业务经营许可证：浙B2-20160288</span>
-                    <span><a href="#">自营经营者信息</a></span>
-                    <span>（浙）网械平台备字[2018]第00007号</span>
-                </div>
-                <div>
+    </div>
+    &lt;!&ndash;footer&ndash;&gt;
+    <div class="footer_1">
+        <div class="footer">
+            <div>
+                <a href="#">About NetEase - </a>
+                <a href="#">公司简介 - </a>
+                <a href="#">联系方法 - </a>
+                <a href="#">友情链接 - </a>
+                <a href="#">招聘信息 - </a>
+                <a href="#">客户服务 - </a>
+                <a href="#">隐私政策 - </a>
+                <a href="#">网络营销 - </a>
+                <a href="#">网易考拉</a>
+            </div>
+            <div>
+                <span>网络文化经营许可证：浙网文[2016]0155-055号</span>
+                <span>增值电信业务经营许可证：浙B2-20160288</span>
+                <span><a href="#">自营经营者信息</a></span>
+                <span>（浙）网械平台备字[2018]第00007号</span>
+            </div>
+            <div>
                     <span class="foot_span">
-                        <a href="#"><img src="assets/img/jinghui.png" alt=""></a>
+                        <a href="#"><img src="img/jinghui.png" alt=""></a>
                         <a href="#">（浙）网械平台备字[2018]第00007号</a>
                     </span>
-                    <span>网易公司版权所有©1997-2018</span>
-                    <span><a href="#">互联网药品信息服务资格证书编号（浙）-2017-0027</a></span>
-                    <span>浙ICP备16011229号-6</span>
-                </div>
-                <div class="foot-div">
-                    <a href="#"><img src="assets/img/chengxin.png" alt=""></a>
-                    <a href="#"><img src="assets/img/kexin.png" alt=""></a>
-                    <a href="#"><img src="assets/img/gongan.gif" alt=""></a>
-                </div>
+                <span>网易公司版权所有©1997-2018</span>
+                <span><a href="#">互联网药品信息服务资格证书编号（浙）-2017-0027</a></span>
+                <span>浙ICP备16011229号-6</span>
+            </div>
+            <div class="foot-div">
+                <a href="#"><img src="img/chengxin.png" alt=""></a>
+                <a href="#"><img src="img/kexin.png" alt=""></a>
+                <a href="#"><img src="img/gongan.gif" alt=""></a>
             </div>
         </div>
-
     </div>
-    <!--轮播图-->
-    <script>
-        var banner=document.getElementById("banner");
-        var arr1=["assets/img/banner1.jpg","assets/img/banner2.jpg","assets/img/banner3.jpg","assets/img/banner4.jpg","assets/img/banner5.jpg","assets/img/banner6.jpg"];
-        var carouse2=new Carousel(banner,arr1,["assets/img/left.png","assets/img/right.png"]);
-        carouse2.width=1349;
-        carouse2.height=400;
-        animation();
-        function animation() {
-            requestAnimationFrame(animation);
-            carouse2.update();
-        }
-        /*添加侧边栏*/
-        var liStyle={
-            lineHeight:"25px",
-            width:"100px",
-            height:"25px",
-            borderBottom:"1px solid rgb(51, 51, 51)",
-            textAlign:"center"
-        };
-        var ulStyle={
-            width:"100px",
-            backgroundColor: "rgb(211, 29, 77)"
-        };
-        var divStyle={
-            width:"100px",
-            height:"306px",
-            position:"fixed",
-            right:"50px",
-            top:"30%",
-            zIndex:"300"
-        };
-        var div=document.createElement("div");
-        div.id="nav_div";
-        Object.assign(div.style,divStyle);
-        document.body.appendChild(div);
-        /*创建top和bottom*/
-        var span=document.createElement("span");
-        var spanStyle={
-            display:"block",
-            width:"100px",
-            height:"35px",
-            lineHeight:"35px",
-            color:"white",
-            textAlign:"center",
-            borderBottom:"1px solid rgb(51, 51, 51)",
-            backgroundColor:"rgb(211, 29, 77)"
-        };
-        Object.assign(span.style,spanStyle);
-        var i=document.createElement("i");
-        i.className="icon iconfont icon-gouwucheman";
-        span.appendChild(i);
-        var a1=document.createElement("a");
-        a1.style.display="inlineBlock";
-        a1.style.color="white";
-        a1.href="#";
-        a1.textContent="购物车";
-        a1.style.paddingLeft="5px";
-        span.appendChild(a1);
-        div.appendChild(span);
-        a1.addEventListener("click",clickHandler);
+-->
 
-       //创建ul
-        var ul=document.createElement("ul");
-        Object.assign(ul.style,ulStyle);
-        div.appendChild(ul);
-        var arr=["优惠券","★☆口碑爆款","99元任选2件","大牌满减",
-        "美容彩妆","家居个护","母婴儿童","美食保健","工厂店精选"];
-        for(var i=0;i<arr.length;i++){
-            var li=document.createElement("li");
-            li.addEventListener("mouseleave",mouseHandler);
-            li.addEventListener("mouseenter",mouseHandler);
-            var a=document.createElement("a");
-            a.href="#";
-            a.style.color="white";
-            a.style.display="block";
-            a.textContent=arr[i];
-            Object.assign(li.style,liStyle);
-            li.appendChild(a);
-            ul.appendChild(li);
-        }
-        /*bottom*/
-        var em=document.createElement("em");
-        Object.assign(em.style,spanStyle);
-        var a2=document.createElement("a");
-        a2.href="#";
-        a2.textContent="Top";
-        a2.style.display="block";
-        a2.style.color="white";
-        em.style.position="relative";
+</div>
+<script>
 
-        em.appendChild(a2);
-        div.appendChild(em);
-        function mouseHandler(e) {
-            if(e.type==="mouseenter"){
-                e.target.style.backgroundColor="rgba(0,0,0,0.25)";
-            }else if(e.type==="mouseleave"){
-                e.target.style.backgroundColor="rgb(211, 29, 77)";
-            }
-        }
-        //点击回到顶部
-        var nav=document.getElementById("nav_div");
-        function clickHandler(e) {
-            document.documentElement.scrollTop=0;
-        }
-        //加载事件
-        document.addEventListener("load",loadHandler);
-        function loadHandler(e) {
-            var doc=document.documentElement.scrollTop;
-            if(doc<500 || doc>document.documentElement.scrollHeight-500){
-                nav.style.display="none";
-            }
-
-        }
-
-    /*-------------------加载首页数据----------------------*/
-
-   /*-------------DOM创建样式-----------*/
-
-   function createDom(img,title,subhead,price) {
-       var bigDiv=document.createElement("div");
-       bigDiv.className="content_section";
-       var shopUl=document.createElement("ul");
-       shopUl.className="section_ul";
-       var shopLi=document.createElement("li");
-       shopLi.className="section_li";
-       bigDiv.appendChild(shopUl);
-       shopUl.appendChild(shopLi);
-       var divSec=document.createElement("div");
-       divSec.className="sec";
-       shopLi.appendChild(divSec);
-       var divImg=document.createElement("div");
-       divImg.className="section_img";
-       divSec.appendChild(divImg);
-
-       var a5=document.createElement("a");
-       var img1=new Image();
-       img1.src=img;
-       a5.appendChild(img1);
-       var divFri=document.createElement("div");
-       divFri.className="friday";
-       var img2=new Image();
-       img2.src="assets/img/friday.png";
-       divFri.appendChild(img2);
-
-       divImg.appendChild(a5);
-       divImg.appendChild(divFri);
-
-       var h5=document.createElement("h5");
-       var a6=document.createElement("a");
-       a6.textContent=title;
-       h5.appendChild(a6);
-       divSec.appendChild(h5);
-
-       var h6=document.createElement("h6");
-       h6.textContent=subhead;
-       divSec.appendChild(h6);
-
-       var divBot=document.createElement("div");
-       divBot.className="section_bottom";
-
-       var spanPrice=document.createElement("span");
-       spanPrice.className="section_price";
-       var i1=document.createElement("i");
-       i1.className="rmb";
-       i1.textContent="¥";
-       var span1=document.createElement("span");
-       span1.textContent="98";
-       i1.appendChild(span1);
-       spanPrice.appendChild(i1);
-       divBot.appendChild(spanPrice);
-
-       var em1=document.createElement("em");
-       var i2=document.createElement("i");
-       i2.className="rmb_2";
-       i2.textContent=" ¥"+price;
-       em1.appendChild(i2);
-       divBot.appendChild(em1);
-
-       var span2=document.createElement("span");
-       span2.className="section_buy";
-       var a7=document.createElement("a");
-       a7.textContent="立即购买";
-       span2.appendChild(a7);
-       divBot.appendChild(span2);
-       divSec.appendChild(divBot);
-       var contentDom=document.getElementById("content_dom");
-       contentDom.appendChild(bigDiv);
-   }
-
-    /*---------------从JSON文件中中获取数据--------------*/
-        /*
-        *
-        * 方法三：原生ajax
-        *
-        *
-        * */
-        ajax();
-       function ajax() {
-           var xhr=new XMLHttpRequest();
-           xhr.open("POST","assets/json/tsconfig.json");
-           xhr.addEventListener("load",loadHandler);
-           xhr.send();
-           function loadHandler() {
-               var data=JSON.parse(this.response);
-               for(var i=0;i<data.length;i++){
-                   createDom(data[i].img,data[i].title,data[i].subhead,data[i].price);
-               }
-           }
-       }
-
-
-    /*
-    *
-    * 方法二
-    * jQuery提供的获取JSON方法
-    *
-    $.getJSON("assets/json/tsconfig.json",function (res) {
-        console.log(res);
-     });
-    * */
-
-    /*
-    * 方法一
-    * node里边写的假数据（现已改成从JSON文件中获取）
-    *
-    *
-    var reqObj={};
-    var type=0;
-    ajax(type);
-    function ajax(_type) {
-        reqObj.type=_type;
-        var xhr=new XMLHttpRequest();
-        xhr.addEventListener("load",loadHandler);
-        xhr.open("POST","http://10.9.48.182:3006");
-        xhr.send(encodeURIComponent(JSON.stringify(reqObj)));
-    }
-    function loadHandler(e) {
-        console.log(JSON.parse(decodeURIComponent(this.response)));
-        var obj=JSON.parse(decodeURIComponent(this.response));
-        var data=obj.result;
-        for(var i=0;i<data.length;i++){
-            createDom(data[i].img,data[i].title,data[i].subhead,data[i].price);
-        }
-    }
-    */
-
-
-    </script>
+</script>
 </body>
 </html>

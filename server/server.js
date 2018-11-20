@@ -26,22 +26,35 @@ var server=http.createServer(function (req,res) {
                 }
             }
         }else if(obj.type===1){//type=1为注册
-            console.log(obj.type);
             var length=user.length;
             var arrObj={};
             user[length]=arrObj;
             user[length].phone=obj.phone;
             user[length].password=obj.password;
-            console.log(user);
             obj.msg="registerSuccess";
-        }else{
+        }else if(obj.type===2){
+            var arr=[];
+            //先查找相同手机号，在查找相同手机号下的密码，前台传过来的和后台的一不一样
+            for(var i=0;i<user.length;i++){
+                arr.push(user[i].phone);
+            }
+            var index=arr.indexOf(obj.phone);
+            console.log(index,arr);
+            if(user[index].password===obj.password){
+                obj.msg="passSuccess";
+            }else {
+                obj.msg="passFalse";
+            }
+        }
+        else{
             obj.error="error";
         }
+        console.log(obj.msg);
         res.writeHead(200,{"Content-Type":"text/html","Access-Control-Allow-Origin":"*"});
         res.write(encodeURIComponent(JSON.stringify(obj)));
         res.end();
     })
 });
 server.listen(3005,"10.9.48.182",function () {
-   console.log("koloa已为您开启服务！")
+    console.log("koloa已为您开启服务！")
 });
