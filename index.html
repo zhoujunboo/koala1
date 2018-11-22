@@ -1901,19 +1901,19 @@
                         <div class="bottom_left_b">
                             <a href="#">关注我们</a>
                             <span class="span_01">
-                                <i class="icon iconfont icon-weibo"></i>
+                                <i class="icon iconfont icon-logo-weibo"></i>
                                 <em>
                                     <img src="assets/img/koloa_1.png" alt="">
                                 </em>
                             </span>
                             <span class="span_02">
-                                <i class="icon iconfont icon-weixin"></i>
+                                <i class="icon iconfont icon-weixin-copy"></i>
                                 <em>
                                     <img src="assets/img/koloa_1.png" alt="">
                                 </em>
                             </span>
                             <span class="span_03">
-                                <i class="icon iconfont icon-weibo"></i>
+                                <i class="icon iconfont icon-logo-weibo"></i>
                                 <em>
                                     <img src="assets/img/koloa_1.png" alt="">
                                 </em>
@@ -2133,7 +2133,7 @@
 
    /*-------------DOM创建样式-----------*/
 
-   function createDom(img,title,subhead,price) {
+   function createDom(data,img,title,subhead,price) {
        var bigDiv=document.createElement("div");
        bigDiv.className="content_section";
        var shopUl=document.createElement("ul");
@@ -2201,9 +2201,16 @@
        divBot.appendChild(span2);
        divSec.appendChild(divBot);
        var contentDom=document.getElementById("content_dom");
+       bigDiv.addEventListener("click",bigDivClickHandler);
+       bigDiv.indexData=data.id;
        contentDom.appendChild(bigDiv);
    }
 
+   /*--------------------点击跳转到详情------------------*/
+   function bigDivClickHandler(e) {
+
+       location.href="http://localhost:63342/koala/assets/detail.html?id="+this.indexData;
+   }
     /*---------------从JSON文件中中获取数据--------------*/
         /*
         *
@@ -2214,13 +2221,15 @@
         ajax();
        function ajax() {
            var xhr=new XMLHttpRequest();
-           xhr.open("POST","assets/json/tsconfig.json");
+           xhr.open("GET","assets/json/tsconfig.json");
            xhr.addEventListener("load",loadHandler);
            xhr.send();
            function loadHandler() {
                var data=JSON.parse(this.response);
-               for(var i=0;i<data.length;i++){
-                   createDom(data[i].img,data[i].title,data[i].subhead,data[i].price);
+               for(var j=0;j<5;j++){
+                   for(var i=0;i<data.length;i++){
+                       createDom(data[i],data[i].img,data[i].title,data[i].subhead,data[i].price);
+                   }
                }
            }
        }
