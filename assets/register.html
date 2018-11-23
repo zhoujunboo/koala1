@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<!--top-->
+<!----------------top-------------->
 <div class="logo_head_1">
     <div class="logo_head">
         <div class="load_head_left">
@@ -21,7 +21,7 @@
         </div>
     </div>
 </div>
-<!--center-->
+<!--------------center------------->
 <div class="center_1">
     <div class="center">
         <img src="img/loginBg.jpg" alt="">
@@ -70,7 +70,7 @@
         </div>
     </div>
 </div>
-<!--foot-->
+<!---------------foot-------------->
 <div class="footer_1 login_foot">
     <div class="footer">
         <div class="footer_div_01">
@@ -126,14 +126,12 @@
     var topPhone=document.getElementsByClassName("top_phone")[0];
     var topPassword=document.getElementsByClassName("top_password")[0];
     var checkBox1=document.getElementById("checkBox1");
-
     phone.addEventListener("focus",focusHandler);
     phone.addEventListener("blur",blurHandler);
-
     password.addEventListener("focus",passFocusHandler);
     password.addEventListener("blur",passBlurHandler);
 
-    /*-------------------注册事件--------------------*/
+    /*----------------------注册事件--------------------*/
     function registerClickHandler(e) {
         var phoneBool=verifyPhoneReg();
         var passBool=verifyPassReg();
@@ -161,16 +159,15 @@
     function focusHandler(e) {
         topPhone.style.border="1px solid #79bdd7"
     }
-    /*------------------密码输入框获得焦点事件----------------*/
+    /*------------------密码输入框获得焦点事件-------------*/
     function passFocusHandler(e) {
         topPassword.style.border="1px solid #79bdd7";
     }
-    /*------------------密码输入框失焦事件-------------*/
+    /*------------------密码输入框失焦事件----------------*/
     function passBlurHandler(e) {
         verifyPassReg();
     }
-
-    /*----------------创建错误信息div-----------------*/
+    /*--------------------创建错误信息div----------------*/
     divStyle={
         fontSize:"12px",
         color:"#fa5b5b",
@@ -227,7 +224,7 @@
             return false;
         }
     }
-    /*----------------验证密码正则表达式--------------*/
+    /*-----------------验证密码正则表达式--------------*/
     function verifyPassReg(e) {
         topPassword.style. border= "1px solid #c5cddb";
         //只能输入6-20个字母、数字、下划线
@@ -257,15 +254,14 @@
             return false;
         }
     }
-
-    /*----------------生成json对象-------------- */
+    /*------------------生成json对象---------------- */
     function getJson() {
         var obj={};
         obj.phone=phone.value;
         obj.password=password.value;
         return obj;
     }
-    /*--------------------ajax------------------*/
+    /*---------------------ajax---------------------*/
     function ajax(_type) {
         var objJson=getJson();
         objJson.type=_type;
@@ -274,6 +270,7 @@
         xhr.open("POST","http://10.9.48.182:3005");
         xhr.send(encodeURIComponent(JSON.stringify(objJson)));
     }
+
     function loadHandler(e) {
         //判断类型，密码错误或者手机号已经被注册
         var obj=JSON.parse(decodeURIComponent(this.response));

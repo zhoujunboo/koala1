@@ -2,11 +2,592 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/shopCar.css">
+    <script src="../node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
+    <style>
+        .stepNum{
+            width: 100px;
+            height: 24px;
+            margin:auto;
+            position: relative;
+        }
+        .stepNum>button{
+            width: 22px;
+            height: 22px;
+            background-color: whitesmoke;
+            border:#bcbcbc 1px solid;
+        }
+        .stepNum>input
+        {
+            width: 46px;
+            height: 20px;
+            border:#bcbcbc 1px solid;
+            border-left: none;
+            border-right: none;
+            text-align: center;
+            outline: none;
+        }
+        button{
+            outline: none;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <!--nav头部-->
+    <div class="nav_1">
+        <div class="nav">
+            <div class="navTopLeft">
+                <span>考拉欢迎你！</span>
+                <a href="login.html">登录</a>
+                <a href="register.html">免费注册</a>
+            </div>
+            <div class="navTopCenter">
+                        <span>手机考拉
+                                <div class="triangle"></div>
+                            <div class="weima">
+                                <img src="img/weima.bmp" alt="二维码">
+                                <div>下载APP</div>
+                                <div>领1000元新人礼包</div>
+                            </div>
+                        </span>
 
+            </div>
+            <div class="navTopRight">
+                <ul>
+                    <li><a href="#">每日签到</a></li>
+                    <li><a href="#">我的订单</a></li>
+                    <li>
+                        <a href="#">个人中心
+                            <span></span>
+                        </a>
+                        <div class="right_p">
+                            <p><a href="#">我的优惠券</a></p>
+                            <p><a href="#">我的红包</a></p>
+                            <p class="last_right_p"><a href="#">我的考拉豆</a></p>
+                            <p><a href="#">账号管理</a></p>
+                            <p class="last_right_p"><a href="#">我的实名认证</a></p>
+                            <p><a href="#">我收藏的商品</a></p>
+                            <p class="last_right_p"><a href="#">我关注的品牌</a></p>
+                            <p><a href="#">售后管理</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">客户服务
+                            <span></span>
+                        </a>
+                        <div class="right_p">
+                            <p><a href="#">联系客服</a></p>
+                            <p><a href="#">帮助中心</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">充值中心
+                            <span></span>
+                        </a>
+                        <div class="right_p">
+                            <p><a href="#">话费流量</a></p>
+                            <p><a href="#">游戏充值</a></p>
+                            <p><a href="">AppStore充值码</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">消费者权益
+                            <span></span>
+                        </a>
+                        <div class="right_p">
+                            <p><a href="#">消费者告知书</a></p>
+                            <p><a href="#">消费者投诉</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">更多
+                            <span></span>
+                        </a>
+                        <div class="right_p ">
+                            <p class="last_right_p"><a href="#">收藏本站</a></p>
+                            <p><a href="#">新浪微博</a></p>
+                            <p><a href="#">微信公众号</a></p>
+                            <p><a href="#">易信公众号</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
+    <!--logo-->
+    <div class="logo_head_1">
+        <div class="logo_head">
+            <div class="load_head_left">
+                <a href="#">
+                    <img src="img/koloa.jpg" alt="logo">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--购物车-->
+    <div class="car_top_1">
+        <div class="car_top">
+            <span id="carTLeft" class="car_t_left">
+
+            </span>
+            <span class="car_t_rig2">
+                <em>配送至</em>
+                <span>二级菜单</span>
+                <em class="changeTrangle"></em>
+            </span>
+            <span class="car_t_rig1">
+                <em><img src="img/shengyin.png" alt=""></em>
+                <em>考拉自营商品已免运费</em>
+                <i class="icon iconfont icon-dayuhao"></i>
+                <a href="#">在逛逛></a>
+            </span>
+        </div>
+    </div>
+    <div class="shopTable_1">
+        <div class="shopTable">
+            <div class="shopTable_Top">
+                <div class="shop_top_left1">
+                    <input type="checkbox">
+                    <em>全选</em>
+                </div>
+                <div class="shop_top_left2">
+                    <span>商品信息</span>
+                </div>
+                <div class="shop_top_left3">
+                    <span>单价(元)</span>
+                </div>
+                <div class="shop_top_left4">
+                    <span>数量</span>
+                </div>
+                <div class="shop_top_left5">
+                    <span>金额</span>
+                </div>
+                <div class="shop_top_left6">
+                    <span>操作</span>
+                </div>
+            </div>
+            <div class="shopTable_Car">
+                <div id="shopTopCar" class="shop_top_car">
+
+                </div>
+                <div class="shopTable_goods">
+                    <div class="shop_center_left1">
+                        <input type="checkbox">
+                    </div>
+                    <div class="shop_center_left2">
+                        <div id="shopCenterImg" class="shop_center_img">
+
+                        </div>
+                        <div class="shop_center_content">
+                            <a id="shopCenterContentA" href="#"></a>
+                            <p id="shopCenterContentP">
+
+                            </p>
+                            <div class="shop_center_run">
+                                <span class="cen_run1">
+                                    <em>
+                                        新人价
+                                        <i class="icon iconfont icon-dayuhao"></i>
+                                        <div class="sheng">立省<span>39元</span></div>
+                                    </em>
+                                </span>
+                                <span class="cen_run2">
+                                    <em>
+                                        包税
+                                        <i class="icon iconfont icon-dayuhao"></i>
+                                        <div class="shuiFei">商品售价已包含税费，无需另付税费</div>
+                                    </em>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="shopCenterLeft3" class="shop_center_left3">
+
+                    </div>
+                    <div id="shopCenter4" class="shop_center_left4">
+
+                    </div>
+                    <div id="shopCenterLeft5" class="shop_center_left5">
+
+                    </div>
+                    <div class="shop_center_left6">
+                        <a class="u-opt">删除</a>
+                        <span class="u-opt">移入我的收藏</span>
+                    </div>
+                </div>
+                <div id="shopBottom" class="shop_bottom">
+                    <span class="discount">活动优惠：-￥0.00</span>
+                    <div class="taxbox">
+                        <span>
+                            <em class="tt">预估税费：</em>
+                            ￥0.00
+                        </span>
+                    </div>
+                    <div class="allsum">
+                        <span>商品应付总计：
+                           <em class="totalnum ">￥0.00</em>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="shop_account">
+                <div class="shop_acc_left">
+                    <input type="checkbox">
+                    <span>全选</span>
+                    <em>删除选中商品</em>
+                </div>
+                <div id="shopAccCenter" class="shop_acc_center">
+
+                </div>
+                <div class="shop_btn">
+                    <em>去结算</em>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--footBgWrap-->
+<div class="footBgWrap_1">
+    <div class="footBgWrap">
+        <ul class="footBgWrap_top">
+            <li class="footBgWrap_top_boll">
+                <div class="footBgWrap_top_boll_left">
+                    <span>正</span>
+                </div>
+                <div class="footBgWrap_top_boll_rig">
+                    <span>100%正品</span>
+                    <p>正品保障 假一赔十</p>
+                </div>
+            </li>
+            <li class="footBgWrap_top_boll">
+                <div class="footBgWrap_top_boll_left">
+                    <span>低</span>
+                </div>
+                <div class="footBgWrap_top_boll_rig">
+                    <span>低价保障</span>
+                    <p>缩减中间环节 确保底价</p>
+                </div>
+            </li>
+            <li class="footBgWrap_top_boll">
+                <div class="footBgWrap_top_boll_left">
+                    <span>退</span>
+                </div>
+                <div class="footBgWrap_top_boll_rig">
+                    <span>30天无忧退货</span>
+                    <p>国内退货 售后无忧</p>
+                </div>
+            </li>
+            <li class="footBgWrap_top_boll">
+                <div class="footBgWrap_top_boll_left">
+                    <span>邮</span>
+                </div>
+                <div class="footBgWrap_top_boll_rig">
+                    <span>满88包邮</span>
+                    <p>部分特殊商品除外</p>
+                </div>
+            </li>
+        </ul>
+        <div class="footBgWrap_bottom">
+            <div class="bottom_left">
+                <div class="bottom_left_t">
+                    <a href="#">
+                        <img src="img/koloaIcon.jpg" alt="">
+                    </a>
+                </div>
+                <div class="bottom_left_b">
+                    <a href="#">关注我们</a>
+                    <span class="span_01">
+                                <i class="icon iconfont icon-weibo"></i>
+                                <em>
+                                    <img src="img/koloa_1.png" alt="">
+                                </em>
+                            </span>
+                    <span class="span_02">
+                                <i class="icon iconfont icon-weixin"></i>
+                                <em>
+                                    <img src="img/koloa_1.png" alt="">
+                                </em>
+                            </span>
+                    <span class="span_03">
+                                <i class="icon iconfont icon-weibo"></i>
+                                <em>
+                                    <img src="img/koloa_1.png" alt="">
+                                </em>
+                        </span>
+                </div>
+            </div>
+            <ul class="bottom_center">
+                <li class="bottom_center_li">
+                    <p>考拉保障</p>
+                    <ul>
+                        <li><a href="#">假一赔十</a></li>
+                        <li><a href="#">监正监督</a></li>
+                    </ul>
+                </li>
+                <li class="bottom_center_li">
+                    <p>新手指南</p>
+                    <ul>
+                        <li><a href="#">购买流程</a></li>
+                        <li><a href="#">支付方式</a></li>
+                        <li><a href="#">通关税费</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </li>
+                <li class="bottom_center_li">
+                    <p>售后服务</p>
+                    <ul>
+                        <li><a href="#">退货政策</a></li>
+                        <li><a href="#">退货流程</a></li>
+                        <li><a href="#">退款说明</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </li>
+                <li class="bottom_center_li">
+                    <p>物流配送</p>
+                    <ul>
+                        <li><a href="#">配送方式</a></li>
+                        <li><a href="#">配送服务</a></li>
+                        <li><a href="#">运费标准</a></li>
+                        <li><a href="#">物流跟踪</a></li>
+                    </ul>
+                </li>
+                <li class="bottom_center_li">
+                    <p>关于我们</p>
+                    <ul>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">招商合作</a></li>
+                        <li><a href="#">销售联盟</a></li>
+                        <li><a href="#">CEO邮箱</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="bottom_right">
+                <a class="bottom_right_a" href="#">
+                    <img src="img/kolaweima.png" alt="#">
+                </a>
+                <p>
+                    <a href="#">扫描下载手机版</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<div class="footer_1">
+    <div class="footer">
+        <div>
+            <a href="#">About NetEase - </a>
+            <a href="#">公司简介 - </a>
+            <a href="#">联系方法 - </a>
+            <a href="#">友情链接 - </a>
+            <a href="#">招聘信息 - </a>
+            <a href="#">客户服务 - </a>
+            <a href="#">隐私政策 - </a>
+            <a href="#">网络营销 - </a>
+            <a href="#">网易考拉</a>
+        </div>
+        <div>
+            <span>网络文化经营许可证：浙网文[2016]0155-055号</span>
+            <span>增值电信业务经营许可证：浙B2-20160288</span>
+            <span><a href="#">自营经营者信息</a></span>
+            <span>（浙）网械平台备字[2018]第00007号</span>
+        </div>
+        <div>
+                    <span class="foot_span">
+                        <a href="#"><img src="img/jinghui.png" alt=""></a>
+                        <a href="#">（浙）网械平台备字[2018]第00007号</a>
+                    </span>
+            <span>网易公司版权所有©1997-2018</span>
+            <span><a href="#">互联网药品信息服务资格证书编号（浙）-2017-0027</a></span>
+            <span>浙ICP备16011229号-6</span>
+        </div>
+        <div class="foot-div">
+            <a href="#"><img src="img/chengxin.png" alt=""></a>
+            <a href="#"><img src="img/kexin.png" alt=""></a>
+            <a href="#"><img src="img/gongan.gif" alt=""></a>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    const STEP_NUM_CHANGE="step_num_change";
+    document.addEventListener(STEP_NUM_CHANGE,stepNumChangeHandler);
+    /*------------------------------主函数-----------------------------*/
+    init();
+    function init() {
+        ajax({type:5});
+    }
+    var shopobj={
+        _shoppingList:[],
+        set shoppingList(value){
+            this._shoppingList=value;
+            console.log("正在加载数据到购物车");
+            createShopCar();
+        },
+        get shoppingList(){
+            return this._shoppingList;
+        }
+    };
+
+    /*-----------------------------创建计数器--------------------------*/
+    var stepNum={
+        _num:1,
+        STEP_NUM_CHANGE:"step_num_change",
+        div:null,
+        createStep:function (parent,data) {
+            this.div=document.createElement("div");
+            parent.appendChild(this.div);
+            this.div.className="stepNum";
+            var leftBn=document.createElement("button");
+            leftBn.textContent="-";
+            this.div.appendChild(leftBn);
+            var input=document.createElement("input");
+            input.type="text";
+            input.value=this._num;
+            this.div.appendChild(input);
+            var rightBn=document.createElement("button");
+            rightBn.textContent="+";
+            this.div.appendChild(rightBn);
+            this.div.input=input;
+            this.div.data=data;
+            leftBn.self=rightBn.self=input.self=this;
+            leftBn.addEventListener("click",this.addItemBnHandler);
+            rightBn.addEventListener("click",this.addItemBnHandler);
+            input.addEventListener("input",this.changeNumInputHandler);
+            input.addEventListener("blur",this.changeNumInputHandler);
+            return this.div;
+        },
+        addItemBnHandler:function (e) {
+            if(this.textContent==="-"){
+                if(this.self.num===1)return;
+                this.self.num--;
+            }else if(this.textContent==="+"){
+                if(this.self.num===99)return;
+                this.self.num++;
+            }
+            var evt=new Event(STEP_NUM_CHANGE);
+            evt.num=parseInt(this.parentElement.input.value);
+            evt.data=this.parentElement.data;
+            document.dispatchEvent(evt);
+        },
+        changeNumInputHandler:function (e) {
+            if(e.type==="input"){
+                this.value=this.value.replace(/[^0-9]/g,"");
+                if(this.value==="0"){
+                    this.self=1;
+                }
+                if(this.value.length>2){
+                    this.self.num=99;
+                }
+            }else if(e.type==="blur"){
+                if(this.value.length===0){
+                    this.self.num=1;
+                }
+            }
+            var evt=new Event(STEP_NUM_CHANGE);
+            evt.num=parseInt(this.value);
+            evt.data=this.parentElement.data;
+            document.dispatchEvent(evt);
+        },
+        set num(value){
+            if(this._num===value)return;
+            this._num=value;
+            if(!this.div)return;
+            this.div.input.value=value;
+        },
+        get num(){
+            return this._num;
+        }
+    };
+    var shopCenter4=document.getElementById("shopCenter4");
+    stepNum.createStep(shopCenter4,{a:1});
+
+    /*---------------------------动态生成购物车-------------------------*/
+    function createShopCar() {
+        var carTLeft=document.getElementById("carTLeft");
+        var str0="";
+        str0+="我的购物车&nbsp;<em>"+shopobj.shoppingList.shopNum+"</em>";
+        carTLeft.innerHTML=str0;
+        //创建表头
+        var shopTopCar=document.getElementById("shopTopCar");
+        var str1="";
+        str1+="<input type='checkbox'><em>自营</em><span>自营直邮仓</span>";
+        shopTopCar.innerHTML=str1;
+        //创建详细信息
+        var shopCenterImg=document.getElementById("shopCenterImg");
+        var str2="";
+        str2+="<a href='#'><img src='img/shop_img.jpg' alt=''></a>";
+        shopCenterImg.innerHTML=str2;
+        var shopCenterContentA=document.getElementById("shopCenterContentA");
+        shopCenterContentA.textContent="Sum:37 苏秘:37 水漾沁润系列 惊喜水分水乳2件套盒";
+        var shopCenterContentP=document.getElementById("shopCenterContentP");
+        var str3="";
+        str3+="<img src='img/30.png' alt=''><span>支持30天无忧退货</span>";
+        shopCenterContentP.innerHTML=str3;
+        var shopCenterLeft3=document.getElementById("shopCenterLeft3");
+        var str4="";
+        str4+="<del class='oldprice'>918.00</del><div class='newprice'><span>¥"+shopobj.shoppingList.detailMoney+"</span></div>";
+        shopCenterLeft3.innerHTML=str4;
+        var shopCenterLeft5=document.getElementById("shopCenterLeft5");
+        var str5="";
+        str5+="<span class='sum_count'>"+shopobj.shoppingList.sum+"</span>";
+        shopCenterLeft5.innerHTML=str5;
+        var shopBottom=document.getElementById("shopBottom");
+        var str6="";
+        var str6="<span class='discount'>活动优惠：-￥0.00</span><div class='taxbox'>" +
+            "<span><em class='tt'>预估税费：</em>￥0.00</span></div><div class='allsum'>" +
+            "<span>商品应付总计:<em class='totalnum'>￥0.00</em></span></div>";
+        shopBottom.innerHTML=str6;
+        var shopAccCenter=document.getElementById("shopAccCenter");
+        var str7="";
+        str7+="<p class='allgoods'>已选商品<em>"+shopobj.shoppingList.shopNum+"</em>件<span>总价(不含运费)：<em>￥"+shopobj.shoppingList.sum+"</em>" +
+            "</span></p><p class='allmoney'>活动优惠：-￥0.00<span>商品应付总计："+shopobj.shoppingList.sum+"</span>" +
+            "<span>商品税费（不含运费税）：￥0.00</span></p>";
+        shopAccCenter.innerHTML=str7;
+    }
+
+    //改变计数器数量事件(面相对象写，未成功)
+    function stepNumChangeHandler(e) {
+        ajax({type:2,num:e.num,item:e.data});
+    }
+
+    function ajax(data) {
+        var xhr=new XMLHttpRequest();
+        xhr.addEventListener("readystatechange",readyStateHandler);
+        xhr.open("POST","http://10.9.48.182:3008");
+        xhr.send(encodeURIComponent(JSON.stringify(data)));
+    }
+
+    function readyStateHandler(e) {
+        if(this.readyState===4 && this.status===200){
+            var obj=JSON.parse(decodeURIComponent(this.response));
+            console.log(obj);
+            console.log(obj.result[0].shopNum);
+            switch (obj.type){
+                case 5:
+                case 1:
+                case 2:
+                case 3:
+                    shopobj.shoppingList=obj.result[0];
+                    break;
+            }
+        }
+    }
+
+    function stepNumChangeHandler(e) {
+        ajax({type:2,num:e.num,item:e.data});
+    }
+
+</script>
 </body>
 </html>

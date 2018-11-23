@@ -626,6 +626,7 @@ bigBox_left_t_2{
 .section_buy{
     float: right;
     padding-top: 3px;
+    cursor: pointer;
     padding-right: 5px;
 }
 .section_buy a{

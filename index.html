@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <!--nav头部-->
+        <!----------nav头部--------->
         <div class="nav_1">
             <div class="nav">
                 <div class="navTopLeft">
@@ -93,8 +93,7 @@
                 </div>
             </div>
         </div>
-
-        <!--logo-->
+        <!-----------logo---------->
         <div class="logo_head_1">
             <div class="logo_head">
                 <div class="load_head_left">
@@ -128,8 +127,7 @@
                 </div>
             </div>
         </div>
-
-        <!--tab-->
+        <!-----------tab----------->
         <div class="top_tab1">
             <div class="topTab">
                 <div class="topTab_left">
@@ -1788,14 +1786,12 @@
                 </div>
             </div>
         </div>
-        <!--banner-->
-
+        <!----------banner--------->
         <div class="banner_1">
             <div id="banner">
-
             </div>
         </div>
-        <!--headImg-->
+        <!----------headImg-------->
         <div class="headImg_1">
             <div class="headImg">
                 <a href="#">
@@ -1803,7 +1799,7 @@
                 </a>
             </div>
         </div>
-        <!--headImg2-->
+        <!----------headImg2------->
         <div class="headImg_2">
             <div class="headImg2">
                 <a href="#">
@@ -1811,7 +1807,7 @@
                 </a>
             </div>
         </div>
-        <!--headImg3-->
+        <!----------headImg3------->
         <div class="headImg_3">
             <div class="headImg3_clear_r">
                 <div class="headImg3">
@@ -1830,9 +1826,7 @@
                 </div>
             </div>
         </div>
-
-
-        <!--content-->
+        <!----------content-------->
         <div class="content_1">
             <div class="content" id="content_dom">
                 <div class="content_head">
@@ -1848,9 +1842,7 @@
                 </a>
             </div>
         </div>
-
-
-        <!--footBgWrap-->
+        <!--------footBgWrap-------->
         <div class="footBgWrap_1">
             <div class="footBgWrap">
                 <ul class="footBgWrap_top">
@@ -1976,7 +1968,7 @@
                 </div>
             </div>
         </div>
-        <!--footer-->
+        <!---------footer-------->
         <div class="footer_1">
             <div class="footer">
                 <div>
@@ -2012,10 +2004,33 @@
                 </div>
             </div>
         </div>
-
     </div>
-    <!--轮播图-->
+
+
     <script>
+        //document做了侦听事件
+        const ADD_ITEM_EVENT="add_item_event";
+        document.addEventListener(ADD_ITEM_EVENT,addItemClickHandler);
+
+        /*---------------加载主页列表(jQ读json文件)信息(并把数据添加到node)----------*/
+        init();
+        function init() {
+            //加载JSON文件
+            $.getJSON("assets/json/tsconfig.json",function (res) {
+                //通过AJAX把数据添加到node
+                var xhr=new XMLHttpRequest();
+                xhr.addEventListener("load",MsgLoadHandler);
+                xhr.open("POST","http://10.9.48.182:3008");
+                xhr.send(encodeURIComponent(JSON.stringify(res)));
+                function MsgLoadHandler(e){
+                    console.log(JSON.parse(decodeURIComponent(this.response)));
+                    console.log("主页通过AJAX把数据添加到node--成功了！");
+                    shopAjax({type:4});
+                }
+            });
+        }
+
+        /*----------------------------------轮播图-----------------------------*/
         var banner=document.getElementById("banner");
         var arr1=["assets/img/banner1.jpg","assets/img/banner2.jpg","assets/img/banner3.jpg","assets/img/banner4.jpg","assets/img/banner5.jpg","assets/img/banner6.jpg"];
         var carouse2=new Carousel(banner,arr1,["assets/img/left.png","assets/img/right.png"]);
@@ -2026,7 +2041,7 @@
             requestAnimationFrame(animation);
             carouse2.update();
         }
-        /*添加侧边栏*/
+       /* -------------------------添加侧边栏---------------------------*/
         var liStyle={
             lineHeight:"25px",
             width:"100px",
@@ -2050,7 +2065,6 @@
         div.id="nav_div";
         Object.assign(div.style,divStyle);
         document.body.appendChild(div);
-        /*创建top和bottom*/
         var span=document.createElement("span");
         var spanStyle={
             display:"block",
@@ -2069,14 +2083,12 @@
         var a1=document.createElement("a");
         a1.style.display="inlineBlock";
         a1.style.color="white";
-        a1.href="#";
+        a1.href="http://localhost:63342/koala/assets/shopCar.html";
         a1.textContent="购物车";
         a1.style.paddingLeft="5px";
         span.appendChild(a1);
         div.appendChild(span);
         a1.addEventListener("click",clickHandler);
-
-       //创建ul
         var ul=document.createElement("ul");
         Object.assign(ul.style,ulStyle);
         div.appendChild(ul);
@@ -2095,7 +2107,6 @@
             li.appendChild(a);
             ul.appendChild(li);
         }
-        /*bottom*/
         var em=document.createElement("em");
         Object.assign(em.style,spanStyle);
         var a2=document.createElement("a");
@@ -2104,7 +2115,6 @@
         a2.style.display="block";
         a2.style.color="white";
         em.style.position="relative";
-
         em.appendChild(a2);
         div.appendChild(em);
         function mouseHandler(e) {
@@ -2119,7 +2129,7 @@
         function clickHandler(e) {
             document.documentElement.scrollTop=0;
         }
-        //加载事件
+        //加载事件（未成功）
         document.addEventListener("load",loadHandler);
         function loadHandler(e) {
             var doc=document.documentElement.scrollTop;
@@ -2129,11 +2139,9 @@
 
         }
 
-    /*-------------------加载首页数据----------------------*/
+    /*----------------------------DOM创建样式------------------------*/
 
-   /*-------------DOM创建样式-----------*/
-
-   function createDom(data,img,title,subhead,price) {
+    function createDom(data) {
        var bigDiv=document.createElement("div");
        bigDiv.className="content_section";
        var shopUl=document.createElement("ul");
@@ -2148,33 +2156,29 @@
        var divImg=document.createElement("div");
        divImg.className="section_img";
        divSec.appendChild(divImg);
-
+       divImg.addEventListener("click",bigDivClickHandler);
+       divImg.indexData=data.id;
        var a5=document.createElement("a");
        var img1=new Image();
-       img1.src=img;
+       img1.src=data.img;
        a5.appendChild(img1);
        var divFri=document.createElement("div");
        divFri.className="friday";
        var img2=new Image();
        img2.src="assets/img/friday.png";
        divFri.appendChild(img2);
-
        divImg.appendChild(a5);
        divImg.appendChild(divFri);
-
        var h5=document.createElement("h5");
        var a6=document.createElement("a");
-       a6.textContent=title;
+       a6.textContent=data.title;
        h5.appendChild(a6);
        divSec.appendChild(h5);
-
        var h6=document.createElement("h6");
-       h6.textContent=subhead;
+       h6.textContent=data.subhead;
        divSec.appendChild(h6);
-
        var divBot=document.createElement("div");
        divBot.className="section_bottom";
-
        var spanPrice=document.createElement("span");
        spanPrice.className="section_price";
        var i1=document.createElement("i");
@@ -2185,92 +2189,67 @@
        i1.appendChild(span1);
        spanPrice.appendChild(i1);
        divBot.appendChild(spanPrice);
-
        var em1=document.createElement("em");
        var i2=document.createElement("i");
        i2.className="rmb_2";
-       i2.textContent=" ¥"+price;
+       i2.textContent=" ¥"+data.price;
        em1.appendChild(i2);
        divBot.appendChild(em1);
-
        var span2=document.createElement("span");
        span2.className="section_buy";
        var a7=document.createElement("a");
-       a7.textContent="立即购买";
+       a7.textContent="加入购物车";
        span2.appendChild(a7);
        divBot.appendChild(span2);
        divSec.appendChild(divBot);
        var contentDom=document.getElementById("content_dom");
-       bigDiv.addEventListener("click",bigDivClickHandler);
-       bigDiv.indexData=data.id;
+       span2.shopData=data;
+       //购物车购买点击事件
+       span2.addEventListener("click",handClickHandler);
        contentDom.appendChild(bigDiv);
    }
 
-   /*--------------------点击跳转到详情------------------*/
-   function bigDivClickHandler(e) {
+    /*----------------------------点击跳转到详情-------------------------*/
 
-       location.href="http://localhost:63342/koala/assets/detail.html?id="+this.indexData;
-   }
-    /*---------------从JSON文件中中获取数据--------------*/
-        /*
-        *
-        * 方法三：原生ajax
-        *
-        *
-        * */
-        ajax();
-       function ajax() {
-           var xhr=new XMLHttpRequest();
-           xhr.open("GET","assets/json/tsconfig.json");
-           xhr.addEventListener("load",loadHandler);
-           xhr.send();
-           function loadHandler() {
-               var data=JSON.parse(this.response);
-               for(var j=0;j<5;j++){
-                   for(var i=0;i<data.length;i++){
-                       createDom(data[i],data[i].img,data[i].title,data[i].subhead,data[i].price);
-                   }
-               }
-           }
-       }
+    function bigDivClickHandler(e) {
+        location.href="http://localhost:63342/koala/assets/detail.html?id="+this.indexData;
+    }
 
+    /*----------------------点击购买自定义抛发事件,解耦合-------------------*/
+    function handClickHandler(e) {
+        var evt=new Event(ADD_ITEM_EVENT);
+        evt.data=this.shopData;
+        document.dispatchEvent(evt);
+    }
 
-    /*
-    *
-    * 方法二
-    * jQuery提供的获取JSON方法
-    *
-    $.getJSON("assets/json/tsconfig.json",function (res) {
-        console.log(res);
-     });
-    * */
+    function addItemClickHandler(e) {
+        shopAjax({type:0,item:e.data});
+    }
 
-    /*
-    * 方法一
-    * node里边写的假数据（现已改成从JSON文件中获取）
-    *
-    *
-    var reqObj={};
-    var type=0;
-    ajax(type);
-    function ajax(_type) {
-        reqObj.type=_type;
+    function shopAjax(shopData) {
         var xhr=new XMLHttpRequest();
-        xhr.addEventListener("load",loadHandler);
-        xhr.open("POST","http://10.9.48.182:3006");
-        xhr.send(encodeURIComponent(JSON.stringify(reqObj)));
+        xhr.addEventListener("readystatechange",readyStateHandler);
+        xhr.open("POST","http://10.9.48.182:3008");
+        xhr.send(encodeURIComponent(JSON.stringify(shopData)));
     }
-    function loadHandler(e) {
-        console.log(JSON.parse(decodeURIComponent(this.response)));
-        var obj=JSON.parse(decodeURIComponent(this.response));
-        var data=obj.result;
-        for(var i=0;i<data.length;i++){
-            createDom(data[i].img,data[i].title,data[i].subhead,data[i].price);
+
+    function readyStateHandler(e) {
+            if(this.readyState===4 && this.status===200){
+                var obj=JSON.parse(decodeURIComponent(this.response));
+                switch (obj.type){
+                    case 4:
+                        for(var j=0;j<5;j++){
+                            for(var i=0;i<obj.result.length;i++){
+                                createDom(obj.result[i]);
+                            }
+                        }
+                        break;
+                    case 0:
+                        alert("添加购物车成功！");
+                        break;
+                }
+            }
         }
-    }
-    */
-
-
     </script>
 </body>
 </html>

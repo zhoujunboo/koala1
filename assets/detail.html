@@ -2216,8 +2216,11 @@
 </div>
 
 <script>
+    init();
+    function init() {
+        getDetail();
 
-
+    }
     /*-------------------------创建放大镜----------------------*/
     $('#img_x li').eq(0).css('border', '2px solid coral');
     $('#zhezhao').mousemove(function(e){
@@ -2245,7 +2248,6 @@
         $('#img_u').hide();
         $('#magnifier').hide();
     });
-
     $('#img_x li').mouseover(function(){
         $(this).css('border', '2px solid coral').siblings().css('border', '2px solid transparent');
         $('#mediumContainer img').eq(0).attr('src', 'http://img3m3.ddimg.cn/2/21/22628333-' + ($(this).index()+1) + '_w_2.jpg');
@@ -2253,7 +2255,6 @@
     });
 
     /*------------------------创建详情界面---------------------*/
-
     function createDetail(res) {
         //创建分类
         var skinCare=document.getElementById("skinCare");
@@ -2294,41 +2295,41 @@
         //售价
         var priceWrapRight=document.getElementById("price_wrap_t_right");
         var str7="";
-        str7+=" <span>"+res.detailMoney+"</span>" +
-            " <span>"+res.postage+"</span>" +
-            " <span> 参考价 </span>" +
-            " <span>"+res.subMoney+"</span>";
+        str7+="<span>"+res.detailMoney+"</span>"+
+            "<span>"+res.postage+"</span>"+
+            "<span> 参考价 </span>"+
+            "<span>"+res.subMoney+"</span>";
         priceWrapRight.innerHTML=str7;
         //活动
         var priceActiveId=document.getElementById("m_price_active_Id");
         var str8="";
-        str8+=" <span>"+res.activeName+"</span>" +
-            " <a href='#'>"+res.activeContent+"</a>";
+        str8+="<span>"+res.activeName+"</span>"+
+            "<a href='#'>"+res.activeContent+"</a>";
         priceActiveId.innerHTML=str8;
         //运费
         var runId=document.getElementById("runId");
         var str9="";
-        str9+=" <span>"+res.freight+"<em></em></span>";
+        str9+="<span>"+res.freight+"<em></em></span>";
         runId.innerHTML=str9;
         //服务
         var planeId=document.getElementById("planeId");
         var str10="";
-        str10+=" <dl class='m_plane'>" +
-            " <dt>" +
-            " <img src='img/china.JPG' alt=''>" +
-            " </dt>" +
-            " <dd>全球直采</dd>" +
-            " </dl>"+" <dl class='m_plane'>" +
-            " <dt>" +
-            " <img src='img/feiji.png' alt=''>" +
-            " </dt>" +
-            " <dd>自营国内仓发货</dd>" +
-            " </dl>"+" <dl class='m_plane'>" +
-            " <dt>" +
-            " <img src='img/shanghai.png' alt=''>" +
-            " </dt>" +
-            " <dd>上海市</dd>" +
-            " </dl>";
+        str10+="<dl class='m_plane'>"+
+            "<dt>"+
+            "<img src='img/china.JPG' alt=''>"+
+            "</dt>"+
+            "<dd>全球直采</dd>"+
+            "</dl>"+"<dl class='m_plane'>"+
+            "<dt>"+
+            "<img src='img/feiji.png' alt=''>"+
+            "</dt>"+
+            "<dd>自营国内仓发货</dd>"+
+            "</dl>"+"<dl class='m_plane'>"+
+            "<dt>"+
+            "<img src='img/shanghai.png' alt=''>"+
+            "</dt>"+
+            "<dd>上海市</dd>"+
+            "</dl>";
         planeId.innerHTML=str10;
         var serviceLastId=document.getElementById("serviceLastId");
         var str11="";
@@ -2337,20 +2338,20 @@
         //库存
         var Inventory=document.getElementById("Inventory");
         str12="";
-        str12+=" <div id='buyBoxId' class='m_buy_box' >" +
-            " </div>"+
+        str12+="<div id='buyBoxId' class='m_buy_box' >"+
+            "</div>"+
             "<span>"+res.count+"</span>";
         Inventory.innerHTML=str12;
         //评价
         var xingId=document.getElementById("xingId");
         var str13="";
-        str13+= "  <span><i class='icon iconfont icon-star'></i></span>" +
-                "  <span><i class='icon iconfont icon-star'></i></span>" +
-                "  <span><i class='icon iconfont icon-star'></i></span>" +
-                "  <span><i class='icon iconfont icon-star'></i></span>" +
-                "  <span><i class='icon iconfont icon-wujiaoxing'></i></span>"+
-                "  <span class='hundred'>"+res.evaluatePercent+"</span>" +
-                "  <span><em><strong>"+res.people+"</strong>评价</em></span>";
+        str13+="<span><i class='icon iconfont icon-star'></i></span>"+
+               "<span><i class='icon iconfont icon-star'></i></span>"+
+               "<span><i class='icon iconfont icon-star'></i></span>"+
+               "<span><i class='icon iconfont icon-star'></i></span>"+
+               "<span><i class='icon iconfont icon-wujiaoxing'></i></span>"+
+               "<span class='hundred'>"+res.evaluatePercent+"</span>"+
+               "<span><em><strong>"+res.people+"</strong>评价</em></span>";
         xingId.innerHTML=str13;
     }
 
@@ -2416,27 +2417,25 @@
             return this._num;
         }
     };
-    /*------------------获取浏览器中的id并加载详情界面--------------*/
-    function getDetail() {
-       var id=location.search.split("?")[1].split("=")[1];
 
+    /*------------------获取浏览器中的id并加载详情界面------------*/
+    function getDetail() {
+        var id=location.search.split("?")[1].split("=")[1];
         $.getJSON("json/tsconfig.json",function (res) {
+            if (id.length>4){
+                createDetail(res[1]);
+                var buyBox=document.getElementById("buyBoxId");
+                stepNum.createStep(buyBox,{a:1});
+            }
             var data=res.filter(function (t) {
                return id===t.id;
             });
-            console.log(data[0]);
             createDetail(data[0]);
             var buyBox=document.getElementById("buyBoxId");
             stepNum.createStep(buyBox,{a:1});
         });
     }
 
-    /*------------------------读取JSON文件---------------------*/
-    init();
-    function init() {
-        getDetail();
-
-    }
 
 </script>
 </body>
